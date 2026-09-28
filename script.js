@@ -1,5 +1,5 @@
 let contador = 0;
-const boton = document.getElementById("botoncambiar");
+const boton = document.getElementById("btnConoce");
 const titulo = document.getElementById("titulo");
 if (boton && titulo) {
     boton.addEventListener("click", function() {
@@ -162,3 +162,15 @@ if (formularioEdad) {
         }
     });
 }
+const botonModo = document.getElementById('botoncambiar');
+if (botonModo) { 
+  botonModo.addEventListener('click',() => {
+    document.body.classList.toggle('dark-mode');
+    if(document.body.classList.contains('dark-mode')) {
+        botonModo.innerHTML = "&#9728, Modo Claro";
+    } else {
+        botonModo.innerHTML = "&#9790, Modo Oscuro";
+    }
+});
+}
+
