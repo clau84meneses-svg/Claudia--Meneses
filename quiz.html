@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="=UTF-8">
+        <title>Quiz- Subly Sueños</title>
+        <link rel="stylesheet" href="quiz.css">
+
+    </head>
+    <body>
+        <main style="padding: 20px; font-family: sans-serif;">
+            <h1>¿Como armar tu regalo ideal?</h1>
+            <p> Jugá y descubrí lo fácil que es diseñar un detalle único con nosotros.</p>
+            <form id="quizForm">
+                <fieldset style="margin-bottom: 15px; padding: 15px; border-radius: 8px;border: 1px solid #ccc;">
+                <legend><strong>1.¿Qué elementos podés combinar para personalizar tu regalo?</strong></legend>
+                <label><input type="radio" name="p1" value="incorrecto">Solo el nombre</label><br>
+                <label><input type="radio" name="p1" value="correcto"> Fotos, frases especiales, nombres y logos</label><br>
+                <label><input type="radio" name="p1" value="incorrecto"> Únicamente dibujos animados</label>
+              </fieldset>
+              <fieldset style="margin-bottom: 15px; padding: 15px; border-radius: 8px; border:1px solid#ccc;">
+                <legend><strong>2. Para que la imagende tu taza o remera quede perfecta,¿Cómo debe ser la foto?</strong></legend>
+                <label><input type="radio" name="p2" value="incorrecto"> Borrosa o muy oscura</label><br>
+                <label><input type="radio" name="p2" value="correcto"> Clara, con buena luz y nítida</label><br>
+                <label><input type="radio" name="p2" value="incorrecto"> No importa la calidad, se arregla sola</label>
+              </fieldset>
+              <fieldset style="margin-bottom: 15px; padding: 15px; border-radius: 8px; border: 1px solid#ccc;">
+                <legend><strong>3. ¿Con cuánta anticipación es ideal encargar un pedido personalizado?</strong></legend>
+                <label><input type="radio" name="p3" value="incorrecto"> Cinco minutos antes de retirarlo</label><br>
+                <label><input type="radio" name="p3" value="correcto"> De 2 a 5 días antes, para diseñarlo con amor y cuidado</label><br>
+                <label><input type="radio" name="p3" value="incorrecto"> Un año antes</label>
+              </fieldset>
+              <button type="button" onclick="calcularPuntaje()" style="padding: 10px 20px; cursor: pointer;">Comprobar Respuestas</button>
+
+            </form>
+            <div id="resultado" style="margin-top: 20px; font-size: 1.2em;"></div>
+        </main>
+        <script>
+            function calcularPuntaje() {
+                let puntaje = 0;
+                const respuesta1 = document.querySelector('input[name="p1"]:checked');
+                const respuesta2 = document.querySelector('input[name="p2"]:checked');
+                const respuesta3 = document.querySelector('input[name="p3"]:checked');
+                if(respuesta1 && respuesta1.value === "correcto") puntaje++;
+                if(respuesta2 && respuesta2.value === "correcto") puntaje++;
+                if(respuesta3 && respuesta3.value === "correcto") puntaje++;
+            const resultadoDiv = document.getElementById("resultado");
+        if (puntaje === 3) {
+            resultadoDiv.innerHTML = `<p style="color: green;"><strong>¡Excelente! ya sabés cómo armar tu próximo regalo único.¡Te esperamos!</strong></p>`;
+        } else {
+             resultadoDiv.innerHTML = `<p style="color: #333;"><strong>Acercate ${puntaje} de 3. ¡Ideal para repasar cómo armamos los diseños juntos!</strong></p>`;
+             }  
+        }
+        </script>
+    </body>
+</html>
