@@ -3,7 +3,7 @@
     <head>
         <meta charset="=UTF-8">
         <title>Quiz- Subly Sueños</title>
-        <link rel="stylesheet" href="quiz.css">
+        <link rel="stylesheet" href="style.css">
 
     </head>
     <body>
@@ -30,26 +30,9 @@
                 <label><input type="radio" name="p3" value="incorrecto"> Un año antes</label>
               </fieldset>
               <button type="button" onclick="calcularPuntaje()" style="padding: 10px 20px; cursor: pointer;">Comprobar Respuestas</button>
-
             </form>
-            <div id="resultado" style="margin-top: 20px; font-size: 1.2em;"></div>
+            <div id="resultado" style="margin-top: 20px; font-weight: bold; text-align: center;"></div>
         </main>
-        <script>
-            function calcularPuntaje() {
-                let puntaje = 0;
-                const respuesta1 = document.querySelector('input[name="p1"]:checked');
-                const respuesta2 = document.querySelector('input[name="p2"]:checked');
-                const respuesta3 = document.querySelector('input[name="p3"]:checked');
-                if(respuesta1 && respuesta1.value === "correcto") puntaje++;
-                if(respuesta2 && respuesta2.value === "correcto") puntaje++;
-                if(respuesta3 && respuesta3.value === "correcto") puntaje++;
-            const resultadoDiv = document.getElementById("resultado");
-        if (puntaje === 3) {
-            resultadoDiv.innerHTML = `<p style="color: green;"><strong>¡Excelente! ya sabés cómo armar tu próximo regalo único.¡Te esperamos!</strong></p>`;
-        } else {
-             resultadoDiv.innerHTML = `<p style="color: #333;"><strong>Acercate ${puntaje} de 3. ¡Ideal para repasar cómo armamos los diseños juntos!</strong></p>`;
-             }  
-        }
-        </script>
+ <script src="quiz.js"></script>
     </body>
 </html>
